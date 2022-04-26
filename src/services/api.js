@@ -1,7 +1,22 @@
-export async function getCategories() {
-  // Implemente aqui
-}
 
-export async function getProductsFromCategoryAndQuery(/* categoryId, query */) {
-  // Implemente aqui! Quando o fizer, descomente os parâmetros que essa função recebe
-}
+export const getCategories = async () => {
+  try {
+    const url = 'https://api.mercadolibre.com/sites/MLB/categories';
+    const search = await fetch(url);
+    const response = await search.json();
+    return response;
+  } catch (error) {
+    return 'You must provide an url';
+  }
+};
+
+export const getProductsFromCategoryAndQuery = async (CATEGORY_ID, QUERY) => {
+  try {
+    const url = `https://api.mercadolibre.com/sites/MLB/search?category=${CATEGORY_ID}&q=${QUERY}  `;
+    const search = await fetch(url);
+    const response = await search.json();
+    return response;
+  } catch (error) {
+    return 'You must provide an url';
+  }
+};
