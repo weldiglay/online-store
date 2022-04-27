@@ -1,22 +1,26 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
 
+import Home from './pages/Home';
+import Cart from './pages/Cart';
 
 class App extends React.Component {
   render() {
     return (
-      <section>
-        <form>
-          <input
-            type="text"
-          />
-          <p data-testid="home-initial-message">
-            Digite algum termo de pesquisa ou escolha uma categoria.
-          </p>
-        </form>
-      </section>
+      <BrowserRouter>
+        <Route
+          exact
+          path="/"
+          render={ () => (
+            <Home name="Digite algum termo de pesquisa ou escolha uma categoria." />
+
+          ) }
+        />
+        <Route path="/cart" component={ Cart } />
+
+      </BrowserRouter>
     );
   }
-
+}
 
 export default App;
