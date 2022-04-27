@@ -19,7 +19,6 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  arrayProduct: PropTypes.arrayOf(PropTypes.object).isRequired,
+  arrayProduct: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 export default Card;
-

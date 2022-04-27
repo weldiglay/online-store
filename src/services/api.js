@@ -1,4 +1,3 @@
-
 export const getCategories = async () => {
   try {
     const url = 'https://api.mercadolibre.com/sites/MLB/categories';
