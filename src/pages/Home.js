@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 import Card from '../components/Card';
+import logo_carrinho from '../imagem/logo_carrinho.png';
 
 class Home extends Component {
   constructor() {
@@ -15,6 +16,7 @@ class Home extends Component {
       fraseIncial: true,
     };
   }
+  // const imagem = <img src="../imagem/logo_carrinho.png" alt="logo_carrinho" />
 
   componentDidMount = () => {
     this.getApiCategoria();
@@ -47,7 +49,7 @@ class Home extends Component {
     await this.handlerChange(event);
     this.handlerClick();
   }
-
+  
   render() {
     const { arrayCategoria, fraseIncial, arrayProduct, product } = this.state;
     const { name } = this.props;
@@ -73,7 +75,9 @@ class Home extends Component {
                 value="Search"
               />
             </label>
-            <Link to="/cart" data-testid="shopping-cart-button" />
+            <Link to="/cart" data-testid="shopping-cart-button">
+              <img src={logo_carrinho} alt="logo-carrinho" />
+            </Link>
           </div>
           { fraseIncial ? frase : !frase }
           <Card arrayProduct={ arrayProduct } />
