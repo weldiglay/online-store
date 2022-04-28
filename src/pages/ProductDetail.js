@@ -22,7 +22,7 @@ class ProductDetail extends React.Component {
       console.log('product', product);
     });
   }
-
+  // retirado imagem do carrinho
   // <img src={ logoCarrinho } alt="logo-carrinho" />
 
   render() {
