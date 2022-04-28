@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 import Card from '../components/Card';
-import logo_carrinho from '../imagem/logo_carrinho.png';
+import logoCarrinho from '../imagem/logo_carrinho.png';
 
 class Home extends Component {
   constructor() {
@@ -49,7 +49,7 @@ class Home extends Component {
     await this.handlerChange(event);
     this.handlerClick();
   }
-  
+
   render() {
     const { arrayCategoria, fraseIncial, arrayProduct, product } = this.state;
     const { name } = this.props;
@@ -76,7 +76,7 @@ class Home extends Component {
               />
             </label>
             <Link to="/cart" data-testid="shopping-cart-button">
-              <img src={logo_carrinho} alt="logo-carrinho" />
+              <img src={ logoCarrinho } alt="logoCarrinho" />
             </Link>
           </div>
           { fraseIncial ? frase : !frase }

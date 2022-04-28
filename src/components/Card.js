@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { addItem } from '../services/itensCart';
 
 class Card extends Component {
+  addProductToCart(value) {
+    addItem(value);
+  }
+
   render() {
     const { arrayProduct } = this.props;
     return (
       <div>
-        {arrayProduct.map(({ id, thumbnail, price, title }) => (
-          <section key={ id } data-testid="product">
-            <img src={ thumbnail } alt={ title } />
-            <p>{ title }</p>
-            <span>{ price }</span>
+        {arrayProduct.map((product) => (
+          /* remoção de desestruturação para pegar o objeto inteiro do produto */
+          <section key={ product.id } data-testid="product">
+            <img src={ product.thumbnail } alt={ product.title } />
+            <p>{ product.title }</p>
+            <span>{ product.price }</span>
+            <button
+              data-testid="product-add-to-cart"
+              type="button"
+              onClick={ () => { this.addProductToCart(product); } }
+            >
+              Add To Cart
+            </button>
           </section>
         )) }
       </div>
