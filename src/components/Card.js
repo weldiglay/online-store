@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { addItem } from '../services/itensCart';
 
 class Card extends Component {
@@ -17,6 +18,12 @@ class Card extends Component {
             <img src={ product.thumbnail } alt={ product.title } />
             <p>{ product.title }</p>
             <span>{ product.price }</span>
+            <Link
+              to={ `/ProductDetail/${product.id}` }
+              data-testid="product-detail-link"
+            >
+              <button type="button">Details</button>
+            </Link>
             <button
               data-testid="product-add-to-cart"
               type="button"
