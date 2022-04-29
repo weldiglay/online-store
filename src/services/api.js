@@ -24,8 +24,8 @@ export const getProductsFromId = async (id) => {
   try {
     const url = `https://api.mercadolibre.com/items/${id}`;
     const search = await fetch(url);
-    const response = await search.json();
-    return response;
+    const details = await search.json();
+    return details;
   } catch (error) {
     return 'You must provide an url';
   }

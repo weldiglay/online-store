@@ -5,19 +5,22 @@ import { Link } from 'react-router-dom';
 class Card extends Component {
   render() {
     const { arrayProduct } = this.props;
+    console.log('products', arrayProduct);
     return (
       <div>
         <h4>Selecione um Categoria</h4>
-        {arrayProduct.map(({ id, thumbnail, price, title }) => (
-          <section key={ id } data-testid="product">
-            <img src={ thumbnail } alt={ title } />
-            <p>{ title }</p>
-            <Link to={ `/ProductDetail/${id}` }>
-              adicionar ao carrinho
-            </Link>
-            <span>{ price }</span>
+        {arrayProduct.map(({ product }) => (
+          <Link
+            to={ `/details/${product.id}` }
+            data-testid="product-detail-link"
+            key={ product.id } >
+            <div data-testid = "product">
+              <h4>{product.title}</h4>
+              <img src={ product.thumbnail } alt={ product.title } />
+              <p>{ product.price }</p>
+            </div>
+          </Link>
 
-          </section>
         )) }
       </div>
     );
