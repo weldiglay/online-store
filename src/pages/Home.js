@@ -77,7 +77,7 @@ class Home extends Component {
               />
             </label>
             <Link to="/cart" data-testid="shopping-cart-button">
-              <img src={ logoCarrinho } alt="logo-carrinho" />
+              <img src={ logoCarrinho } alt="logoCarrinho" />
             </Link>
           </div>
           { fraseIncial ? frase : !frase }
