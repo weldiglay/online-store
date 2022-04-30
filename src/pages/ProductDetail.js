@@ -110,11 +110,12 @@ class ProductDetail extends React.Component {
               onChange={ this.onChange }
             />
           </label>
+          {/* { `${1}-rating`} */}
           <label htmlFor="rating">
             1
             <input
               type="radio"
-              data-testeid={ `${1}-rating`}
+              data-testid="1-rating"
               id="rating"
               value="1"
               name="index"
@@ -125,7 +126,7 @@ class ProductDetail extends React.Component {
             2
             <input
               type="radio"
-              data-testeid={ `${2}-rating` }
+              data-testid="2-rating"
               id="rating"
               value="2"
               name="index"
@@ -136,7 +137,7 @@ class ProductDetail extends React.Component {
             3
             <input
               type="radio"
-              data-testeid={ `${three}-rating` }
+              data-testid="3-rating"
               id="rating"
               value="3"
               name="index"
@@ -147,7 +148,7 @@ class ProductDetail extends React.Component {
             4
             <input
               type="radio"
-              data-testeid={ `${four}-rating` }
+              data-testid="4-rating"
               id="rating"
               value="4"
               name="index"
@@ -158,7 +159,7 @@ class ProductDetail extends React.Component {
             5
             <input
               type="radio"
-              data-testeid={ `${five}-rating` }
+              data-testid="5-rating"
               id="rating"
               value="5"
               name="index"
