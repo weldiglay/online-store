@@ -16,6 +16,7 @@ class ProductDetail extends React.Component {
       email: '',
       evaluation: '',
       feedback: JSON.parse(localStorage.getItem('savedEvaluations')) || [],
+      // https://cursos.alura.com.br/forum/topico-spread-operator-em-objetos-advindos-do-json-parse-155113
     };
   }
 
@@ -61,10 +62,6 @@ class ProductDetail extends React.Component {
   render() {
     const { productReturned, returnedAtributes, email,
       evaluation, feedback } = this.state;
-    const three = 3;
-    const four = 4;
-    const five = 5;
-
     /* const { productReturned, returnedAtributes } = this.state;
     const { thumbnail, title, price, id } = productReturned;
     const { btnClick } = this.props; */
