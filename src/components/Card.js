@@ -10,6 +10,7 @@ class Card extends Component {
 
   render() {
     const { arrayProduct } = this.props;
+    console.log('products', arrayProduct);
     return (
       <div>
         {arrayProduct.map((product) => (
@@ -39,6 +40,10 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  arrayProduct: PropTypes.arrayOf(PropTypes.string).isRequired,
+  arrayProduct:
+  PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string,
+    thumbnail: PropTypes.string,
+    price: PropTypes.number,
+    title: PropTypes.string })).isRequired,
 };
 export default Card;

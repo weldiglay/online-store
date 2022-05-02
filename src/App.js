@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-
+import ProductDetail from './pages/ProductDetail';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
-import ProductDetail from './pages/ProductDetail';
 
 class App extends React.Component {
   render() {
@@ -19,7 +18,6 @@ class App extends React.Component {
         />
         <Route path="/cart" component={ Cart } />
         <Route path="/ProductDetail/:id" component={ ProductDetail } />
-
       </BrowserRouter>
     );
   }
