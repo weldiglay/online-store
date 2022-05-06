@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import { getItensCart } from '../services/itensCart';
 import { productsIDSaved } from '../services/productsLocalStorage';
-import { getProductsFromId } from '../services/api';
 
 class Cart extends Component {
   constructor() {

@@ -8,7 +8,7 @@ export const addProductsToCart = (id) => {
     const findIndex = productIDLocalStorage.indexOf(foundID); // find the first element of an array
     const { count, productId } = foundID;
     const result = count + 1;
-    productIDLocalStorage[findIndex] = { count: result, productId }; // se encontrar +1 recebe count e o id. 
+    productIDLocalStorage[findIndex] = { count: result, productId }; // se encontrar +1 recebe count e o id.
 
     localStorage.setItem('cart', JSON.stringify(productIDLocalStorage));
   } else {

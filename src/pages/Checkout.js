@@ -33,7 +33,7 @@ class Checkout extends React.Component {
   // };
 
   render() {
-    const { produtos } = this.props;
+    // const { produtos } = this.props;
     // const { name, CPF, CEP, email, tel, endereco } = this.state;
 
     return (
