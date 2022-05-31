@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import '../css/Home.css';
+/* import { Link } from 'react-router-dom'; */
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 import Card from '../components/Card';
-import logoCarrinho from '../imagem/logoCarrinho.png';
+/* import logoCarrinho from '../imagem/logoCarrinho.png'; */
 
 class Home extends Component {
   constructor() {
@@ -53,14 +55,15 @@ class Home extends Component {
   render() {
     const { arrayCategoria, fraseIncial, arrayProduct, product } = this.state;
     const { name } = this.props;
-    const frase = <span data-testid="home-initial-message">{name}</span>;
+    const frase = <span data-testid="home-initial-message" id="fraseSearch">{name}</span>;
     return (
       <main className="main">
+        <Header />
         <form>
-          <h3>Página Inicial</h3>
-          <div>
+          <div className="contanierSearch">
             <label htmlFor="input-search">
               <input
+                id="input-search"
                 type="text"
                 onChange={ this.handlerChange }
                 name="product"
@@ -70,36 +73,43 @@ class Home extends Component {
             </label>
             <label htmlFor="input-button">
               <input
+                id="input-button"
                 type="button"
                 data-testid="query-button"
                 onClick={ this.handlerClick }
                 value="Search"
               />
             </label>
-            <Link to="/cart" data-testid="shopping-cart-button">
+            {/* <Link to="/cart" data-testid="shopping-cart-button">
               <img src={ logoCarrinho } alt="logoCarrinho" />
-            </Link>
+            </Link> */}
           </div>
           { fraseIncial ? frase : !frase }
-          <Card arrayProduct={ arrayProduct } />
         </form>
-        <aside>
-          {arrayCategoria.map((item) => (
-            <label
-              htmlFor="input-radio"
-              key={ item.id }
-              data-testid="category"
-            >
-              <input
-                type="radio"
-                onClick={ this.handlerRadio }
-                value={ item.id }
-                name="categoria"
-              />
-              <span>{item.name}</span>
-            </label>
-          ))}
-        </aside>
+        <section className="telaPrincipal">
+          <aside>
+            {arrayCategoria.map((item) => (
+              <label
+                htmlFor="input-radio"
+                key={ item.id }
+                data-testid="category"
+              >
+                <input
+                  type="radio"
+                  onClick={ this.handlerRadio }
+                  value={ item.id }
+                  name="categoria"
+                />
+                <span>{item.name}</span>
+                <br />
+                <br />
+              </label>
+            ))}
+          </aside>
+          <main className="resultadoPesquisa">
+            <Card arrayProduct={ arrayProduct } />
+          </main>
+        </section>
       </main>
     );
   }

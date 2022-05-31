@@ -1,0 +1,143 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+
+.containerSuperior {
+  align-items: center;
+  display: flex;
+  position: relative;
+  
+}
+
+.divProduto {
+  border-radius: 17px;
+  box-shadow: 2px 2px 2px gainsboro;
+  display: flex;
+  right: 220px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 200px;
+  width: 500px;
+}
+
+.divProduto img {
+  height: 100px;
+  margin-right: 50px;
+  width: 80px;
+}
+
+.titulo {
+  font-size: 20px;
+  height: 40px;
+  text-align: center;
+}
+
+.preco {
+  font-size: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.btnCartDetail {
+  background-color: limegreen;
+  border: 5px solid limegreen;
+  border-radius: 10px;
+  font-size: 20px;
+  right: 205px;
+  margin-right: 200px;
+  padding: 5px;
+  position: absolute;
+  height: 90px;
+  top: 90px;
+  width: 130px;
+}
+
+.detalhes h4 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+.listaDeDetalhes {
+  border-radius: 17px;
+  box-shadow: 2px 2px 2px gainsboro;
+  margin-left: 20px;
+  padding: 10px;
+  width: 600px;
+}
+
+.listaDeDetalhes p {
+  font-size: 20px;
+}
+
+.containerAvaliações {
+  background-color: whitesmoke;
+  border-radius: 17px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.containerAvaliações h3 {
+  font-size: 40px;
+  font-weight: 1000px;
+  text-align: center;
+}
+
+.formularioAvaliação {
+  border: 2px solid black;
+  border-radius: 7px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.formularioAvaliação h5 {
+  font-size: 30px;
+}
+
+#email {
+  border-radius: 5px;
+  margin-right: 200px;
+  width: 300px;
+}
+
+#evaluation {
+  border-radius: 5px;
+  height: 300px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 700px;
+}
+
+#btnAvaliacao {
+  background-color: gainsboro;
+  border-radius: 5px;
+}
