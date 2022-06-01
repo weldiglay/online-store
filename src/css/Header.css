@@ -10,7 +10,6 @@ html {
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
-  /* font-weight: normal; */
 }
 
 ol, ul {
@@ -27,7 +26,6 @@ header {
   background-color: #b90a00;
   color: antiquewhite;
   display: flex;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 20px;
   justify-content: space-between;
   padding: 15px;

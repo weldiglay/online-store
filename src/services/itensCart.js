@@ -25,7 +25,18 @@ export const getItensCart = () => new Promise((resolve) => {
 export const addItem = (item) => new Promise((resolve) => {
   if (item) {
     const itensSalvos = getCart();
-    setToCart([...itensSalvos, item]);
+    const some = itensSalvos.some((element) => item.id === element.id);
+    if (some) {
+      itensSalvos.forEach((element) => {
+        if (item.id === element.id) {
+          element.count += 1;
+        }
+      });
+      setToCart(itensSalvos);
+    } else {
+      item.count = 1;
+      setToCart([...itensSalvos, item]);
+    }
   }
   simulateRequest(SUCCESS_STATUS)(resolve);
 });

@@ -55,7 +55,13 @@ class Home extends Component {
   render() {
     const { arrayCategoria, fraseIncial, arrayProduct, product } = this.state;
     const { name } = this.props;
-    const frase = <span data-testid="home-initial-message" id="fraseSearch">{name}</span>;
+    const frase = (
+      <span
+        data-testid="home-initial-message"
+        className="fraseSearch"
+      >
+        {name}
+      </span>);
     return (
       <main className="main">
         <Header />
@@ -64,6 +70,7 @@ class Home extends Component {
             <label htmlFor="input-search">
               <input
                 id="input-search"
+                className="input-search"
                 type="text"
                 onChange={ this.handlerChange }
                 name="product"
@@ -74,6 +81,7 @@ class Home extends Component {
             <label htmlFor="input-button">
               <input
                 id="input-button"
+                className="input-button"
                 type="button"
                 data-testid="query-button"
                 onClick={ this.handlerClick }

@@ -10,7 +10,6 @@ html {
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
-  font-weight: normal;
 }
 
 ol, ul {
@@ -18,22 +17,18 @@ ol, ul {
 }
 
 img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
-body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-#input-search {
+.input-search {
   border: 2px solid black;
   border-radius: 5px;
   height: 30px;
   width: 300px;
 }
 
-#input-button {
+.input-button {
   background-color: lightgray;
   border: 2px solid black;
   border-radius: 5px;
@@ -52,13 +47,13 @@ aside {
 }
 
 .contanierSearch {
+  margin-bottom: 5px;
   margin-left: 500px;
   margin-top: 10px;
-  margin-bottom: 5px;
   width: 600px;
 }
 
-#fraseSearch {
+.fraseSearch {
   margin-left: 470px;
   text-align: center;
 }

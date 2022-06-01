@@ -10,7 +10,6 @@ html {
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
-  font-weight: normal;
 }
 
 ol, ul {
@@ -18,12 +17,11 @@ ol, ul {
 }
 
 img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 body h1 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 30px;
 }
 
@@ -31,18 +29,17 @@ body h1 {
   align-items: center;
   display: flex;
   position: relative;
-  
 }
 
 .divProduto {
   border-radius: 17px;
   box-shadow: 2px 2px 2px gainsboro;
   display: flex;
-  right: 220px;
   margin-left: 10px;
   margin-top: 10px;
   padding: 10px;
   position: absolute;
+  right: 220px;
   top: 200px;
   width: 500px;
 }
@@ -70,11 +67,11 @@ body h1 {
   border: 5px solid limegreen;
   border-radius: 10px;
   font-size: 20px;
-  right: 205px;
+  height: 90px;
   margin-right: 200px;
   padding: 5px;
   position: absolute;
-  height: 90px;
+  right: 205px;
   top: 90px;
   width: 130px;
 }
@@ -107,7 +104,7 @@ body h1 {
 
 .containerAvaliações h3 {
   font-size: 40px;
-  font-weight: 1000px;
+  font-weight: 900;
   text-align: center;
 }
 
@@ -123,13 +120,13 @@ body h1 {
   font-size: 30px;
 }
 
-#email {
+.email {
   border-radius: 5px;
   margin-right: 200px;
   width: 300px;
 }
 
-#evaluation {
+.evaluation {
   border-radius: 5px;
   height: 300px;
   margin-bottom: 10px;
@@ -137,7 +134,7 @@ body h1 {
   width: 700px;
 }
 
-#btnAvaliacao {
+.btnAvaliacao {
   background-color: gainsboro;
   border-radius: 5px;
 }

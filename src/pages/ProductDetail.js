@@ -97,7 +97,10 @@ class ProductDetail extends React.Component {
                 {productReturned.title}
               </h4>
               <br />
-              <h4 className="preco">{productReturned.price}</h4>
+              <h4 className="preco">
+                R$
+                {productReturned.price}
+              </h4>
             </div>
           </div>
           <button
@@ -132,6 +135,7 @@ class ProductDetail extends React.Component {
             digite seu email:
             <input
               data-testid="product-detail-email"
+              className="email"
               id="email"
               type="text"
               name="email"
@@ -203,6 +207,7 @@ class ProductDetail extends React.Component {
             <br />
             <textarea
               data-testid="product-detail-evaluation"
+              className="evaluation"
               id="evaluation"
               type="text"
               placeholder="avaliação"
@@ -214,6 +219,7 @@ class ProductDetail extends React.Component {
           <br />
           <button
             type="button"
+            className="btnAvaliacao"
             id="btnAvaliacao"
             data-testid="submit-review-btn"
             onClick={ this.onClick }
