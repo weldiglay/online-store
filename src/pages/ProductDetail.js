@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logoCarrinho from '../imagem/logoCarrinho.png';
+import Header from '../components/Header';
+/* import { Link } from 'react-router-dom'; */
+/* import logoCarrinho from '../imagem/logoCarrinho.png'; */
 import { getProductsFromId } from '../services/api';
 import { addItem } from '../services/itensCart';
 import Feedback from '../components/Feedback';
+import '../css/ProductDetail.css';
 
 class ProductDetail extends React.Component {
   constructor() {
@@ -68,37 +70,72 @@ class ProductDetail extends React.Component {
 
     return (
       <section>
-        <h4 data-testid="product-detail-name">{productReturned.title}</h4>
-        <h4>{productReturned.price}</h4>
-        <img src={ productReturned.thumbnail } alt="imagem do produto" />
-        <button
-          type="button"
-          data-testid="product-detail-add-to-cart"
-          onClick={ () => { this.addProductToCart(productReturned); } }
-        >
-          Add To Cart
-        </button>
-        <div>
+        <Header />
+        <div className="containerSuperior">
+          <div className="detalhes">
+            <h4>Especificações</h4>
+            <div className="listaDeDetalhes">
+              {
+                returnedAtributes.map((atributes) => (
+                  <p key={ atributes.id }>
+                    {`${atributes.name}: ${atributes.value_name}`}
+                    <br />
+                  </p>
+                ))
+              }
+            </div>
+          </div>
+          <div className="divProduto">
+            <div>
+              <img src={ productReturned.thumbnail } alt="imagem do produto" />
+            </div>
+            <div>
+              <h4
+                data-testid="product-detail-name"
+                className="titulo"
+              >
+                {productReturned.title}
+              </h4>
+              <br />
+              <h4 className="preco">
+                R$
+                {productReturned.price}
+              </h4>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="btnCartDetail"
+            data-testid="product-detail-add-to-cart"
+            onClick={ () => { this.addProductToCart(productReturned); } }
+          >
+            Add To Cart
+          </button>
+        </div>
+        {/* <div>
           <Link to="/cart" data-testid="shopping-cart-button">
             <img src={ logoCarrinho } alt="logoCarrinho" />
           </Link>
-        </div>
-        <div>
+        </div> */}
+        <div className="containerAvaliações">
+          <h3>Avaliações</h3>
+          <br />
           {
-            returnedAtributes.map((atributes) => (
-              <span key={ atributes.id }>
-                {`${atributes.name}: ${atributes.value_name}`}
-              </span>
+            feedback.map((elem) => (<Feedback
+              key={ elem.index }
+              feedback={ elem }
+            />
             ))
           }
         </div>
-        <form>
-          <p><h5>Avaliações</h5></p>
+        <form className="formularioAvaliação">
+          <p><h5>Deixe sua Avaliação</h5></p>
           <br />
           <label htmlFor="email">
             digite seu email:
             <input
               data-testid="product-detail-email"
+              className="email"
               id="email"
               type="text"
               name="email"
@@ -107,6 +144,7 @@ class ProductDetail extends React.Component {
               onChange={ this.onChange }
             />
           </label>
+          Qual sua nota para esse produto?
           {/* { `${1}-rating`} */}
           <label htmlFor="rating">
             1
@@ -163,10 +201,13 @@ class ProductDetail extends React.Component {
               onChange={ this.onChange }
             />
           </label>
+          <br />
           <label htmlFor="evaluation">
             sua avaliação:
+            <br />
             <textarea
               data-testid="product-detail-evaluation"
+              className="evaluation"
               id="evaluation"
               type="text"
               placeholder="avaliação"
@@ -175,25 +216,17 @@ class ProductDetail extends React.Component {
               onChange={ this.onChange }
             />
           </label>
+          <br />
           <button
             type="button"
+            className="btnAvaliacao"
+            id="btnAvaliacao"
             data-testid="submit-review-btn"
             onClick={ this.onClick }
           >
             Enviar
           </button>
         </form>
-        <div>
-          <p>Avaliações Anteriores</p>
-          {
-            feedback.map((elem) => (<Feedback
-              key={ elem.index }
-              feedback={ elem }
-            />
-
-            ))
-          }
-        </div>
       </section>
 
     );

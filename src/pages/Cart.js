@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 // import { getItensCart } from '../services/itensCart';
 import { productsIDSaved } from '../services/productsLocalStorage';
+import '../css/Cart.css';
 
 class Cart extends Component {
   constructor() {
@@ -55,54 +57,61 @@ class Cart extends Component {
     const { cart } = this.state;
     console.log('cart', cart);
     return (
-      <div>
+      <div className="contanierCart">
+        <Header />
         <div
           className="cart-container"
           data-testid="shopping-cart-empty-message"
         >
-          {cart.length > 0 ? (
-            cart.map((productInfo) => (
-              <div key={ productInfo.id }>
-                <p data-testid="shopping-cart-product-name">
-                  { productInfo.title }
-                </p>
-                <p>
-                  Quantidade:
-                  <span data-testid="shopping-cart-product-quantity">
-                    {productInfo.count}
-                  </span>
-                </p>
-                <p>
-                  <button
-                    name={ productInfo.id }
-                    data-testid="product-decrease-quantity"
-                    type="button"
-                    onClick={ () => this.decreaseButton(productInfo.id) }
-                  >
-                    -
-                  </button>
-                  <button
-                    name={ productInfo.id }
-                    data-testid="product-increase-quantity"
-                    type="button"
-                    onClick={ () => this.increaseButton(productInfo.id) }
-                  >
-                    +
-                  </button>
-                </p>
-                <img src={ productInfo.thumbnail } alt="imagem do produto" />
-                <p>
-                  R$
-                  {' '}
-                  { (productInfo.count * productInfo.price).toFixed(2) }
-                </p>
-              </div>
-            ))
-          ) : (
-            <p>
-              Seu carrinho está vazio
-            </p>
-          )}
+          <div className="produtcsList">
+            {cart.length > 0 ? (
+              cart.map((productInfo) => (
+                <div key={ productInfo.id } className="productCart">
+                  <img src={ productInfo.thumbnail } alt="imagem do produto" />
+                  <p data-testid="shopping-cart-product-name">
+                    { productInfo.title }
+                  </p>
+                  <p>
+                    R$
+                    {' '}
+                    { (productInfo.count * productInfo.price).toFixed(2) }
+                  </p>
+                  <div className="btnQuantidade">
+                    <button
+                      name={ productInfo.id }
+                      data-testid="product-decrease-quantity"
+                      type="button"
+                      onClick={ () => this.decreaseButton(productInfo.id) }
+                    >
+                      -
+                    </button>
+                    <span data-testid="shopping-cart-product-quantity">
+                      {productInfo.count}
+                    </span>
+                    <button
+                      name={ productInfo.id }
+                      data-testid="product-increase-quantity"
+                      type="button"
+                      onClick={ () => this.increaseButton(productInfo.id) }
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>
+                Seu carrinho está vazio
+              </p>
+            )}
+          </div>
+          <button
+            type="button"
+            data-testid="checkout-products"
+            className="btnCheckout"
+          >
+            Checkout
+          </button>
         </div>
       </div>
     );

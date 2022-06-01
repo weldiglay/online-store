@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.input-search {
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 30px;
+  width: 300px;
+}
+
+.input-button {
+  background-color: lightgray;
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 30px;
+}
+
+aside {
+  border: 2px solid black;
+  border-radius: 17px;
+  display: flow-root;
+  flex-wrap: wrap;
+  height: 1250px;
+  margin-left: 10px;
+  padding: 5px;
+  width: 250px;
+}
+
+.contanierSearch {
+  margin-bottom: 5px;
+  margin-left: 500px;
+  margin-top: 10px;
+  width: 600px;
+}
+
+.fraseSearch {
+  margin-left: 470px;
+  text-align: center;
+}
+
+.telaPrincipal {
+  display: flex;
+}
+
+.resultadoPesquisa {
+  border: 2px solid black;
+  border-radius: 17px;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 20px;
+  padding: 5px;
+  width: 1100px;
+}
